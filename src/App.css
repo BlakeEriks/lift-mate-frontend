@@ -1,0 +1,481 @@
+:root {
+  --dark: 1, 22, 39;
+  --light: 244, 244, 244;
+  --light2: 211, 211, 211, 0.502;
+  --highlight: 65, 234, 212;
+  --accent: 209, 0, 84;
+  background: rgb(var(--dark));
+}
+
+body, html, #root {
+  margin: 0;
+  height: 100%;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background: rgb(174,4,76);
+  background: linear-gradient(156deg, rgba(174,4,76,1) 0%, rgba(45,17,48,1) 51%, rgba(1,22,39,1) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  height: calc(100% - 200px);
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  padding: 0 -50%;
+  background: rgb(var(--dark));
+  flex: 1;
+}
+
+.nav-content {
+  display: flex;
+  max-width: 1050px;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0 auto;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  color: rgb(var(--light));
+  font-family: 'BioRhyme', serif;
+  cursor: pointer;
+}
+
+.nav-greeting {
+  color: rgb(var(--light));
+}
+
+.nav-user {
+  border-radius: 5px;
+  font-weight: 2;
+}
+
+.tab-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100px; 
+}
+
+.tab-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-nav-item {
+  color: rgb(var(--light));
+  font-weight: 700;
+  background: rgb(var(--dark), 0.5);
+  padding: 10px;
+  margin: 0 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.lift-editor-panel {
+  width:40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  
+  .lift-viewer-panel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+/* .lift-viewer-panel {
+  width:60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.calendar {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+}
+
+.calendar-heading {
+  display: flex;
+  height: 12%;
+}
+
+.calendar-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.calendar-week {
+  display: flex;
+  flex: 1;
+}
+
+.calendar-week:first-child {
+  justify-content: flex-end;
+}
+
+.calendar-title {
+  font-family: 'BioRhyme', serif;
+  font-size: 72px;
+  color: rgb(var(--light));
+  align-self: center;
+}
+
+.notepad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background: rgb(var(--dark), 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@keyframes color-light-to-dark {
+  0% {color: rgb(var(--light));}
+  100% {color: rgb(var(--dark));}
+}
+
+.notepad-title {
+  font-size: 56px;
+  color: rgb(var(--light));
+  text-align: center;
+  padding: 8px 0;
+  animation-name: glow-text;
+  animation-duration: 1s;
+  margin: 0;
+}
+
+.notepad-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.notepad-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.movement-create-form {
+  width: 100%;
+}
+
+.movement-info {
+  font-size: 24px;
+  border-color: rgb(var(--light));
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+.movement-label {
+  font-size: 24px;
+  margin: 4px 0;
+  color: rgb(var(--light))
+}
+
+legend{
+  font-size: 32px;
+}
+
+.movement-input {
+  padding: 4px 8px;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.set-field {
+  color: rgb(var(--light));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.set-input {
+  padding: 2px;
+  width: 30%;
+  display: inline;
+  margin-bottom: 8px;
+}
+
+.set-input-text {
+  padding: 0 10px;
+}
+
+.movement-item {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 4px 10px;
+  width: 100%;
+  align-items: center;
+  color: rgb(var(--light));
+  height: 44px;
+  font-weight: bold;
+}
+
+button.movement-delete {
+  background: none;
+  color: rgb(var(--light));
+}
+
+.movement-item:hover {
+  background: rgb(var(--light2));
+}
+
+.movement-item:hover > button.movement-delete {
+  color: rgb(var(--accent));
+}
+
+button.movement-delete:hover {
+  background: rgb(var(--dark));
+  color: rgb(var(--light));
+}
+
+.first-week {
+  justify-content: flex-end;
+}
+
+.calendar-day {
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--highlight));
+  border-radius: 25%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calendar-day:hover {
+  color: rgb(var(--accent));
+  background: rgb(var(--light));
+}
+
+.calendar-heading-label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--accent));
+  font-size: 36px;
+  background: rgb(var(--light));
+}
+
+.selected {
+  background: rgb(var(--light));
+  color: rgb(var(--accent));
+}
+
+.main-divider {
+  height: 70%;
+  align-self: center;
+  border: 1px solid rgb(var(--accent));
+}
+
+.intro-div {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lift-text {
+  font-size: 50px;
+  animation-duration: 5s;
+}
+
+.mate-text {
+  font-size: 50px;
+  animation-duration: 5s;
+}
+
+.liftmate-text {
+  font-family: 'BioRhyme', serif;
+  font-size: 0px;
+  animation-duration: 5s;
+  color: rgb(var(--accent));
+  position:absolute;
+  top:15%;
+}
+
+.intro-text {
+  font-family: 'BioRhyme', serif;
+  font-size: 96px;
+  color: rgb(var(--dark));
+  display: none;
+  animation-duration: 3s;
+  margin: 60px 0;
+}
+
+.login-box {
+  padding: 0 30px;
+  background: rgb(var(--light));
+  border-radius: 10px;
+  animation-name: fade-in;
+  animation-duration: 3s;
+  height: 400px;
+  width: 300px;
+  margin-top: 110px;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+  width: 80%;
+  margin-top: 20%;
+  justify-content: space-around;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+  justify-content: space-around;
+}
+
+input {
+  color: rgb(var(--light));
+  background: rgb(var(--dark));
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0;
+  border: none;
+  transition: 0.1s;
+  box-shadow: 0 0 0 1pt rgb(var(--accent));
+  text-shadow: 0 0 0 rgb(var(--light));
+}
+
+input::placeholder {
+  color: rgb(var(--light));
+}
+
+input:focus {
+  box-shadow: 0 0 3pt 2pt rgb(var(--highlight));
+  outline: none;
+  border-radius: 10px;
+}
+
+.divider {
+  position: relative;
+  height: 0px;
+  width: 100%;
+  border: 1px solid rgb(var(--dark));
+  top: -8px;
+}
+
+.divider.or {
+  position: relative;
+  top: -62px;
+}
+
+.or-text {
+  z-index: 3;
+  width: max-content;
+  align-self: center;
+  background: rgb(var(--light));
+  padding: 0 20px;
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+
+button {
+  background: rgb(var(--accent));
+  color: rgb(var(--light));
+  border: none;
+  font-size: 16px;
+  width: auto;
+  padding: 9px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pink-on-white {
+  color: rgb(var(--accent));
+  background: rgb(var(--light));
+}
+
+.highlight {
+  color: rgb(var(--highlight));
+}
+
+.accent {
+  color: rgb(var(--accent));
+}
+
+.medium {
+  font-size: 32px;
+}
+
+.small {
+  font-size: 24px;
+}
+
+@keyframes lift-text-move-right {
+  0% {margin-right: 15px;font-size: 96px;}
+  30% {margin-right: 15px;}
+  60% {margin-right: 0px;font-size: 96px;}
+  100% {font-size: 50px;}
+}
+
+@keyframes mate-text-move-left {
+  0% {margin-left: 15px;font-size: 96px;}
+  30% {margin-left: 15px;}
+  60% {margin-left: 0px;font-size: 96px;}
+  100% {font-size: 50px;}
+}
+
+@keyframes fade-out {
+  0% {display:block}
+  33% {color: rgb(var(--light));}
+  100% {color: rgb(var(--dark));}
+}
+
+@keyframes lift-mate-text {
+  0% {color: rgb(var(--dark));top:48%;}
+  20% {color: rgb(var(--light));}
+  30% {color: rgb(var(--light));}
+  60% {color:rgb(var(--accent));top:48%;}
+  100% {top:15%;}
+}
+
+@keyframes fade-in {
+  0% {background: rgb(var(--dark));}
+  100% {background: rgb(var(--light));}
+}
