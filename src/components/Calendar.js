@@ -34,7 +34,7 @@ const Calendar = props => {
     )
 }
 
-const constructCalendar = ({lifts, selectedDate, setSelectedDate}) => {
+const constructCalendar = ({movements, selectedDate, setSelectedDate}) => {
 
     let weeks = []
     let today = new Date()
@@ -51,8 +51,11 @@ const constructCalendar = ({lifts, selectedDate, setSelectedDate}) => {
             week = []
         }
         week.push(
-            <Day key={date.getDate()} date={new Date(date.getTime())} selected={selectedDate.getDate() === date.getDate()} setSelectedDate={setSelectedDate} 
-                hasLift={lifts[date.getDate()]} />
+            <Day key={date.getDate()} 
+                date={new Date(date.getTime())} 
+                selected={selectedDate.getDate() === date.getDate()} 
+                setSelectedDate={setSelectedDate} 
+                hasLift={movements.some(movement => new Date(movement.date).getDate() === date.getDate())} />
         )
         date.setDate(date.getDate() + 1);
     }
