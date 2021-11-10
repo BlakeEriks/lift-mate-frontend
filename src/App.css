@@ -91,29 +91,34 @@ nav {
 }
 
 .lift-editor-panel {
-  width:40%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lift-viewer-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 500px) {
-  
   .lift-viewer-panel {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
+  .lift-editor-panel {
+    width: 100%;
+  }
 }
 
-/* .lift-viewer-panel {
-  width:60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+@media screen and (min-width: 501px) {
+  .lift-viewer-panel {
+    width: 60%;
+  }
+  .lift-editor-panel {
+    width: 40%;
+  }
+}
 
 .calendar {
   width: 90%;
