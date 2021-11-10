@@ -6,7 +6,7 @@ import { Button } from '../styles/Button'
 import { HorizontalDivider } from '../styles/Divider'
 import { PlusIcon } from '../styles/Icon'
 
-const LiftEditor = ({movements, selectedDate, createMovement, deleteMovement}) => {
+const LiftEditor = ({movements, selectedDate, createMovement, deleteMovement, setMobileMode}) => {
 
     const [mode, setMode] = useState('show')
 
@@ -30,7 +30,7 @@ const LiftEditor = ({movements, selectedDate, createMovement, deleteMovement}) =
     return (
         <div className="lift-editor-panel">
             <div className="notepad">
-                <h1 className="notepad-title">
+                <h1 className="notepad-title" onClick={setMobileMode ? () => setMobileMode('view') : () => {}}>
                     {moment(selectedDate).format('MMM Do, YYYY')}
                 </h1>
                 <HorizontalDivider />
